@@ -8,7 +8,6 @@
 #include "corne-layouts.dtsi"
 / {
 	chosen {
-		zephyr,display = &oled;
 		zmk,kscan = &kscan0;
 		zmk,physical-layout = &layout_0;
 	};
@@ -62,7 +61,7 @@ RC(2,0) RC(2,1) RC(2,2) RC(2,3) RC(2,4) RC(2,5)  RC(2,6)  RC(2,7) RC(2,8) RC(2,9
 
 
 &pro_micro_i2c {
-    status = "okay";
+    status = "disabled";
 
     oled: ssd1306@3c {
         compatible = "solomon,ssd1306fb";
@@ -98,7 +97,7 @@ RC(2,0) RC(2,1) RC(2,2) RC(2,3) RC(2,4) RC(2,5)  RC(2,6)  RC(2,7) RC(2,8) RC(2,9
 
 &spi3 {
 	compatible = "nordic,nrf-spim";
-	status = "okay";
+	status = "disabled";
 
 	pinctrl-0 = <&spi3_default>;
 	pinctrl-1 = <&spi3_sleep>;
@@ -121,8 +120,10 @@ RC(2,0) RC(2,1) RC(2,2) RC(2,3) RC(2,4) RC(2,5)  RC(2,6)  RC(2,7) RC(2,8) RC(2,9
 	};
 };
 
+/*
 / {
 	chosen {
 		zmk,underglow = &led_strip;
 	};
 };
+*/
